@@ -1,4 +1,10 @@
 import Link from "next/link";
+import WebAssetIcon from '@mui/icons-material/WebAsset';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import XIcon from '@mui/icons-material/X';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 
 const Sidebar = () => {
     return (
@@ -20,6 +26,15 @@ const Sidebar = () => {
                         <Link href="/" className="block p-2 hover:bg-gray-700 rounded">
                             PROJECTS
                         </Link>
+                    </li>
+                    <li>
+                        <ul className="socials">
+                            <Link href="/"><li><WebAssetIcon></WebAssetIcon></li></Link>
+                            <Link href="/"><li><LinkedInIcon></LinkedInIcon></li></Link>
+                            <Link href="/"><li><GitHubIcon></GitHubIcon></li></Link>
+                            <Link href="/"><li><XIcon></XIcon></li></Link>
+                            <Link href="/"><li><InstagramIcon></InstagramIcon></li></Link>
+                        </ul>
                     </li>
                 </ul>
             </nav>
