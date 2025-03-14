@@ -1,20 +1,59 @@
 import { db } from "@/firebaseConfig";
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 
+// reference the proj coll 
+const projectsColection = collection(db, "projects")
 
-// add a new project 
-// TODO: schema 
-export const addProject = async (project) => {
+// create / add a new project 
+export default addProject = async (title, year, description, imageUrl) => {
     try {
-        const docRef = await addDoc(collection(db, "projects"), project);
-        console.log("Document written with ID: ", docRef.id);
+        const docRef = await addDoc(projectsColection, {
+            title,
+            year,
+            description,
+            imageUrl,
+            createdAt: new Date()
+        });
+        console.log("Project added with ID: ", docRef.id)
+        return docRef.id;
     } catch (error) {
-        console.log("Error adding comment: ", error)
+        console.error("Error adding project: ", error)
+        return null;
     }
 }
 
-// fetch ALL projects
+// read / get all projects
 export const getProjects = async () => {
-    const querySnapshot = await getDocs(collection(db, "projects"));
-    return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data()}))
+    try {
+        const querySnapshot = await getDocs(projectsColection);
+        return querySnapshot.docs.map(doc => ({
+            id: doc.id, 
+            ...doc.data()
+        }))
+    } catch (error) {
+        console.error("Error fetching projects: ", error)
+        return [];
+    }
+}
+
+// update edit a project 
+export const updateProject = async (projectId, updatedData) => {
+    try {
+        const projectRef = doc(db, "projects", projectId);
+        await updateDoc(projectRef, updatedData);
+        console.log("Project updated: ", projectId)
+    } catch (error) {
+        console.error("Error updating project: ", error)
+    }
+}
+
+// delete project 
+export const deleteProject = async (projectId) => {
+    try {
+        const projectRef = doc(db, "projects", projectId);
+        await deleteDoc(projectRef)
+        console.log("Project deleted: ", projectId)
+    } catch(error) {
+        console.log("Error deleting project: ", error)
+    }
 }
