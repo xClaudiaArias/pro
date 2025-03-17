@@ -2,8 +2,9 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <div>
-      <Projects/>
-    </div>
+    <main>
+      <h2>My Projects</h2>
+      <Projects />
+    </main>
   );
 }
