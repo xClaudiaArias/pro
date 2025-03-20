@@ -8,9 +8,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
         if (req.method === "POST") {
             // CREATE: Add a project
-            const { title, year, description, imageUrl } = req.body;
-            const docRef = await addDoc(projectsCollection, { title, year, description, imageUrl, createdAt: new Date() });
-            res.status(201).json({ id: docRef.id, title, year, description, imageUrl });
+            const { title, year, description, imageUrl, tags } = req.body;
+
+            const docRef = await addDoc(projectsCollection, {
+                title,
+                year,
+                description,
+                imageUrl,
+                tags: tags || [], // Default to empty array if not provided
+                createdAt: new Date()
+            });
+        
+            res.status(201).json({ id: docRef.id, title, year, description, imageUrl, tags });
         } 
         else if (req.method === "GET") {
             // READ: Get all projects
