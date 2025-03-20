@@ -1,10 +1,11 @@
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/lib/firebaseConfig"
+import { db } from "@/lib/firebaseConfig";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { ProjectType } from "@/components/types";
 
 export default async function ProjectPage({ params }: { params: { id: string } }) {
     const docRef = doc(db, "projects", params.id);
@@ -14,7 +15,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
         return notFound();
     }
 
-    const project = docSnap.data();
+    const project = docSnap.data() as ProjectType; 
 
     return (
         <div className="container">
@@ -27,7 +28,7 @@ export default async function ProjectPage({ params }: { params: { id: string } }
 
             {/* Additional Images */}
             <div className="additional-imgs-container flex">
-                {project.images?.map((img: string, index: number) => (
+                {project.additional_imgs?.map((img, index) => (
                     <Image key={index} src={img} width={300} height={300} alt={`image ${index + 1}`} />
                 ))}
             </div>
@@ -42,40 +43,42 @@ export default async function ProjectPage({ params }: { params: { id: string } }
             <div className="tools">
                 <h2>Tools Used</h2>
                 <ul>
-                    {project.tools?.map((tool: string, index: number) => (
+                    {project.tools?.map((tool, index) => (
                         <li key={index}>{tool}</li>
                     ))}
                 </ul>
             </div>
 
-            {/* Sitemap and User Flow */}
+            {/* Sitemap */}
             <div className="sitemap-userflow">
                 <h2>Sitemap and User Flow</h2>
-                {project.sitemap?.map((img: string, index: number) => (
+                {project.sitemap?.map((img, index) => (
                     <Image key={index} src={img} width={300} height={300} alt={`sitemap ${index + 1}`} />
                 ))}
             </div>
 
-            {/* Wireframing and Planning */}
+            {/* Wireframes */}
             <div className="wireframes-planning">
                 <h2>Wireframes and Planning</h2>
-                {project.wireframes?.map((img: string, index: number) => (
+                {project.wireframes?.map((img, index) => (
                     <Image key={index} src={img} width={300} height={300} alt={`wireframe ${index + 1}`} />
                 ))}
             </div>
 
-            {/* High Fidelity Design */}
+            {/* High Fidelity */}
             <div className="high-fidelity">
                 <h2>High Fidelity Design</h2>
-                {project.highFidelity?.map((img: string, index: number) => (
+                {project.high_fidelity_imgs?.map((img, index) => (
                     <Image key={index} src={img} width={300} height={300} alt={`high fidelity ${index + 1}`} />
                 ))}
             </div>
 
             {/* Live Demo */}
-            <div className="live-demo">
-                <Image src={project.demo} width={300} height={300} alt="Live demo" />
-            </div>
+            {project.demo && (
+                <div className="live-demo">
+                    <Image src={project.demo} width={300} height={300} alt="Live demo" />
+                </div>
+            )}
 
             {/* Go Up */}
             <div className="go-up">

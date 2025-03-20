@@ -1,5 +1,5 @@
 import Link from "next/link";
-// import WebAssetIcon from '@mui/icons-material/WebAsset';
+import WebAssetIcon from '@mui/icons-material/WebAsset';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import XIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -29,7 +29,7 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <ul className="socials">
-                            {/* <li><Link href="/"><WebAssetIcon></WebAssetIcon></Link></li> */}
+                            <li><Link href="/"><WebAssetIcon></WebAssetIcon></Link></li>
                             <li><Link href="/"><LinkedInIcon></LinkedInIcon></Link></li>
                             <li><Link href="/"><GitHubIcon></GitHubIcon></Link></li>
                             <li><Link href="/"><XIcon></XIcon></Link></li>

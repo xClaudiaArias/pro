@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { db } from "@/lib/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
@@ -10,10 +11,18 @@ const Projects = () => {
 
     useEffect(() => {
         const fetchProjects = async () => {
-            const querySnapshot = await getDocs(collection(db, "projects"));
-            const projectsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ProjectType));
-            console.log(projectsData)
-            setProjects(projectsData);
+            try {
+                const querySnapshot = await getDocs(collection(db, "projects"));
+                const projectsData: ProjectType[] = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...(doc.data() as Omit<ProjectType, "id">)
+                }));
+
+                console.log(projectsData);
+                setProjects(projectsData);
+            } catch (error) {
+                console.error("Error fetching projects:", error);
+            }
         };
 
         fetchProjects();
@@ -29,3 +38,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

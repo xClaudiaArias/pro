@@ -8,18 +8,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
         if (req.method === "POST") {
             // CREATE: Add a project
-            const { title, year, description, imageUrl, tags } = req.body;
+            const { title, year, description, additional_imgs, about, tools, sitemap, wireframes, high_fidelity, demo, tags  } = req.body;
 
             const docRef = await addDoc(projectsCollection, {
                 title,
                 year,
-                description,
-                imageUrl,
+                description, 
+                additional_imgs, 
+                about, 
+                tools, 
+                sitemap, 
+                wireframes, 
+                high_fidelity, 
+                demo,
                 tags: tags || [], // Default to empty array if not provided
                 createdAt: new Date()
             });
         
-            res.status(201).json({ id: docRef.id, title, year, description, imageUrl, tags });
+            res.status(201).json({ id: docRef.id, title, year, description, additional_imgs, about, tools, sitemap, wireframes, high_fidelity, demo, tags });
         } 
         else if (req.method === "GET") {
             // READ: Get all projects
