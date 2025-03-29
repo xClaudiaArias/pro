@@ -25,42 +25,42 @@ const Sidebar = () => {
 
     return (
         <div className="relative">
-            <div className="flex items-center justify-between p-4 bg-white shadow-md md:hidden">
-                <h2 className="text-lg font-bold">Claudia Arias</h2>
-                    <button
-                        title="menu"
-                        type="button"
-                        className="p-2 focus:outline-none"
-                        onClick={toggleSidebar}
-                    >
-                        <MenuIcon />
-                    </button>
+            <div className="flex items-center justify-between pl-8 bg-white md:relative md:block">
+                <h2 className="text-lg font-bold py-1 px-2 bg-white md:relative md:block">
+                    Claudia Arias
+                </h2>
+                <div className="flex items-center justify-between p-2 bg-white md:hidden">
+                        <button
+                            title="menu"
+                            type="button"
+                            className="p-2 focus:outline-none"
+                            onClick={toggleSidebar}
+                        >
+                            <MenuIcon />
+                        </button>
+                </div>
             </div>
 
 
             <aside className={`${
                     isOpen ? "block" : "hidden"
-                } md:block w-32 md:w-32 lg:w-64 h-screen bg-white p-5 absolute md:relative top-18 right-0 z-50 md:h-10`}
+                } md:block w-32 md:w-32 lg:w-64 h-screen bg-white pl-8 absolute md:relative top-0 right-0 z-50 md:h-auto`}
             >
-
-                <button title="menu" type="button" className="md:hidden p-2" onClick={closeSidebar}>
-                    <CloseIcon/>
-                </button>
 
                 <nav>
                     <ul className="space-y-2">
                         <li>
-                            <Link href="/about" className="block p-2 hover:bg-gray-700 rounded">
+                            <Link href="/about" className="block p-2 hover:bg-rose-100 rounded">
                                 ABOUT
                             </Link>
                         </li>
                         <li>
-                            <Link href="/contact" className="block p-2 hover:bg-gray-700 rounded">
+                            <Link href="/contact" className="block p-2 hover:bg-rose-100 rounded">
                                 CONTACT
                             </Link>
                         </li>
                         <li>
-                            <Link href="/" className="block p-2 hover:bg-gray-700 rounded">
+                            <Link href="/" className="block p-2 hover:bg-rose-100 rounded">
                                 PROJECTS
                             </Link>
                         </li>
@@ -72,6 +72,11 @@ const Sidebar = () => {
                                 <li><Link href="/"><XIcon></XIcon></Link></li>
                                 <li><Link href="/"><InstagramIcon></InstagramIcon></Link></li>
                             </ul>
+                        </li>
+                        <li className="block p-2 hover:bg-rose-100 rounded" >
+                            <button title="menu" type="button" className="md:hidden p-2" onClick={closeSidebar}>
+                                <CloseIcon/>
+                            </button>
                         </li>
                     </ul>
                 </nav>
