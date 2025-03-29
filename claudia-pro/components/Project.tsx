@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation"; 
 import React from "react";
-import { ProjectType } from "./types"; 
+import { ProjectType } from "./types";
 
 interface ProjectProps {
     project: ProjectType; 

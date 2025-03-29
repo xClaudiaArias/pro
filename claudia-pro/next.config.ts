@@ -4,7 +4,17 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     domains: ["images.pexels.com"],
-  },
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'another-example.com',
+      },
+    ],
+  },  
 };
 
 export default nextConfig;
