@@ -22,7 +22,7 @@ const Projects = () => {
     }, []);
 
     return (
-        <div className="projects-container">
+        <div className="projects-container p-4 grid grid-cols-2 gap-4">
             {projects.map((project) => (
                 <Project key={project.id} project={project} />
             ))}
