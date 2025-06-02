@@ -22,7 +22,7 @@ const Projects = () => {
     }, []);
 
     return (
-        <div className="projects-container h-screen p-4 lg:grid lg:grid-cols-2 gap-4">
+        <div className="projects-container h-screen p-4 lg:grid lg:grid-cols-2 gap-4 sm:flex sm:flex-col">
             {projects.map((project) => (
                 <Project key={project.id} project={project} />
             ))}

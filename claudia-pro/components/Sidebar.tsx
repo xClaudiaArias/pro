@@ -29,7 +29,7 @@ const Sidebar = () => {
                     <br></br>
                     Arias
                 </h2>
-                <div className="flex items-center justify-between p-2 bg-white lg:hidden">
+                <div className="flex items-center justify-between p-2 bg-white xl:hidden">
                     <button
                         title="menu"
                         type="button"
@@ -44,10 +44,10 @@ const Sidebar = () => {
 
             <aside className={`${
                     isOpen ? "block" : "hidden"
-                } lg:w-64 md:h-80 lg:h-screen lg:bg-white pl-8 absolute md:absolute right-0 z-50 lg:pt-0`}
+                } lg:w-64 lg:h-80 xl:h-screen xl:bg-white pl-8 absolute xl:absolute right-0 z-50 lg:pt-0 xl:block`}
             >
 
-            <nav className="sm:h-80 bg-white rounded-lg shadow-md p-4 lg:rounded-none lg:shadow-none lg:p-0">
+            <nav className="sm:h-80 bg-white rounded-lg shadow-md p-4 xl:rounded-none xl:shadow-none xl:p-0">
                     <ul className="space-y-4">
                         <li>
                             <Link href="/about" className="block p-2 hover:bg-rose-100 rounded text-gray-600">
@@ -72,7 +72,7 @@ const Sidebar = () => {
                             </ul>
                         </li>
                         <li className="md:block p-2 md:hover:bg-rose-100 rounded flex align-center" >
-                            <button title="menu" type="button" className="lg:hidden p-2" onClick={closeSidebar}>
+                            <button title="menu" type="button" className="xl:hidden p-2" onClick={closeSidebar}>
                                 <CloseIcon className="text-gray-300"/>
                             </button>
                         </li>
