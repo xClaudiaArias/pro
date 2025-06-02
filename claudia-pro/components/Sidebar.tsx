@@ -22,9 +22,9 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="relative">
-            <div className="flex items-center justify-between lg:pl-8 md:pl-2 bg-white">
-                <h2 className="lg:text-3xl uppercase font-bold py-4 px-3">
+        <div className="relative xl:w-64">
+            <div className="flex items-center justify-between md:pl-2 bg-white xl:pl-0">
+                <h2 className="lg:text-3xl uppercase font-bold py-4 lg:px-3 xl:px-6">
                     Claudia 
                     <br></br>
                     Arias
@@ -44,10 +44,10 @@ const Sidebar = () => {
 
             <aside className={`${
                     isOpen ? "block" : "hidden"
-                } lg:w-64 lg:h-80 xl:h-screen xl:bg-white pl-8 absolute xl:absolute right-0 z-50 lg:pt-0 xl:block`}
+                } lg:w-64 lg:h-80 xl:h-screen xl:bg-white pl-8 absolute xl:absolute right-0 z-50 xl:pt-0 xl:block`}
             >
 
-            <nav className="sm:h-80 bg-white rounded-lg shadow-md p-4 xl:rounded-none xl:shadow-none xl:p-0">
+            <nav className="sm:h-80 bg-white rounded-lg shadow-md p-4 xl:rounded-none xl:shadow-none xl:p-0 xl:bg-red-200 xl:ml-14">
                     <ul className="space-y-4">
                         <li>
                             <Link href="/about" className="block p-2 hover:bg-rose-100 rounded text-gray-600">
