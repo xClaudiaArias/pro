@@ -72,7 +72,7 @@ const Sidebar = () => {
                                 <li><Link href="/"><GitHubIcon className="text-gray-400"></GitHubIcon></Link></li>
                             </ul>
                         </li>
-                        <li className="block p-2 hover:bg-rose-100 rounded flex align-center" >
+                        <li className="md:block p-2 md:hover:bg-rose-100 rounded flex align-center" >
                             <button title="menu" type="button" className="md:hidden p-2" onClick={closeSidebar}>
                                 <CloseIcon className="text-gray-300"/>
                             </button>

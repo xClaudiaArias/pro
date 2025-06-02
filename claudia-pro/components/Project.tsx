@@ -18,7 +18,7 @@ export default function Project({ project }: ProjectProps) {
     return (
         // TODO: projects should be responive and display like columns on smaller screens
         <div 
-            className="project-card h-100 cursor-pointer rounded shadow-sm bg-center hover:shadow-lg hover:scale-102 transition text-white bg-black"
+            className="project-card h-full cursor-pointer rounded shadow-sm bg-center hover:shadow-lg hover:scale-102 transition text-white bg-black"
             style={{ backgroundImage: `url(${project.additional_imgs[0]})` }}
             onClick={handleClick}
         >
