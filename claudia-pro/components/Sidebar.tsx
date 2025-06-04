@@ -23,12 +23,14 @@ const Sidebar = () => {
 
     return (
         <div className="relative xl:w-64">
-            <div className="flex items-center justify-between md:pl-2 bg-white xl:pl-0 xl:mb-10">
-                <h2 className="lg:text-3xl uppercase font-bold py-4 lg:px-3 xl:px-6">
-                    Claudia 
-                    <br></br>
-                    Arias
-                </h2>
+            <div className="flex items-center justify-between p-2 bg-white xl:pl-0 xl:mb-10">
+                <Link href="/" className="block p-2 hover:text-violet-500 rounded text-gray-600">
+                    <h2 className="lg:text-3xl uppercase p-2 font-bold py-4 lg:px-3 xl:px-6 w-64">
+                        Claudia 
+                        <br></br>
+                        Arias
+                    </h2>
+                </Link>
                 <div className="flex items-center justify-between p-2 bg-white xl:hidden">
                     <button
                         title="menu"
@@ -50,17 +52,17 @@ const Sidebar = () => {
             <nav className="sm:h-80 bg-white rounded-lg shadow-md p-4 xl:rounded-none xl:shadow-none xl:p-0">
                     <ul className="space-y-4">
                         <li>
-                            <Link href="/about" className="block p-2 hover:text-pink-700 rounded text-gray-600">
+                            <Link href="/about" className="block p-2 hover:text-violet-500 rounded text-gray-600">
                                 ABOUT
                             </Link>
                         </li>
                         <li>
-                            <Link href="/contact" className="block p-2 hover:text-pink-700 rounded text-gray-600">
+                            <Link href="/contact" className="block p-2 hover:text-violet-500 rounded text-gray-600">
                                 CONTACT
                             </Link>
                         </li>
                         <li>
-                            <Link href="/" className="block p-2 hover:text-pink-700 rounded text-gray-600">
+                            <Link href="/" className="block p-2 hover:text-violet-500 rounded text-gray-600">
                                 PROJECTS
                             </Link>
                         </li>
@@ -71,7 +73,7 @@ const Sidebar = () => {
                                 <li><Link href="/"><GitHubIcon className="text-gray-400"></GitHubIcon></Link></li>
                             </ul>
                         </li>
-                        <li className="md:block p-2 md:hover:bg-rose-100 rounded flex align-center" >
+                        <li className="md:block p-2 md:hover:bg-rose-100 rounded flex align-center xl:hidden" >
                             <button title="menu" type="button" className="xl:hidden p-2" onClick={closeSidebar}>
                                 <CloseIcon className="text-gray-300"/>
                             </button>

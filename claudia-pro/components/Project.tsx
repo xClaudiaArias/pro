@@ -22,7 +22,7 @@ export default function Project({ project }: ProjectProps) {
             style={{ backgroundImage: `url(${project.additional_imgs[0]})` }}
             onClick={handleClick}
         >
-            <div className="hover:bg-black hover:opacity-75 lg:h-full p-4 rounded flex flex-col justify-center p-8">
+            <div className="hover:bg-black hover:opacity-75 h-full p-4 rounded flex flex-col justify-center p-8">
                 <h2 className="uppercase text-4xl font-bold">{project.title}</h2>
                 <p className="text-2xl font-bold">{project.year}</p>
                 <p className="py-2">{project.description}</p>
