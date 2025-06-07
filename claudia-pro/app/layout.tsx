@@ -21,9 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col xl:flex-row h-screen">
+      <body className="flex flex-col xl:flex-row h-screen justify-between">
         <Sidebar />
-        <main className="flex-grow overflow-auto">{children}</main>
+        <main className="w-full xl:px-4">{children}</main>
       </body>
     </html>
   );

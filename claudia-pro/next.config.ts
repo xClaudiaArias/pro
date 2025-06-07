@@ -3,15 +3,14 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["images.pexels.com", 'res.cloudinary.com'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'example.com',
+        hostname: 'images.pexels.com',
       },
       {
         protocol: 'https',
-        hostname: 'another-example.com',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },  
