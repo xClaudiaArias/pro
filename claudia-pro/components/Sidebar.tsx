@@ -24,13 +24,17 @@ const Sidebar = () => {
     return (
         <div className="relative xl:w-64">
             <div className="flex items-center justify-between p-2 bg-white xl:pl-0 xl:mb-10">
-                <Link href="/" className="block p-2 hover:text-violet-500 rounded text-gray-600">
-                    <h2 className="lg:text-3xl uppercase p-2 font-bold py-4 lg:px-3 xl:px-6 w-64">
-                        Claudia 
-                        <br></br>
-                        Arias
-                    </h2>
-                </Link>
+                <div>
+                    <Link href="/" className="block p-2 hover:text-violet-500 rounded text-gray-600">
+                        <h2 className="lg:text-3xl uppercase p-2 font-bold py-4 lg:px-3 xl:px-6 w-64">
+                            Claudia 
+                            <br></br>
+                            Arias
+                        </h2>
+                    </Link>
+                    <p className="hidden xl:block px-8 py-2 text-gray-600 uppercase">Software Engineer</p>
+                    <p className="hidden xl:block px-8 py-2 text-gray-600 uppercase">New York</p>
+                </div>
                 <div className="flex items-center justify-between p-2 bg-white xl:hidden">
                     <button
                         title="menu"
