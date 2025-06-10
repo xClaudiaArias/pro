@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             </div>
 
             {/* Additional Images */}
-            <div className="additional-imgs-container h-auto flex flex-col xl:grid xl:grid-cols-2 gap-2 w-full relative mb-16 w-full border-2 border-orange-300">
+            <div className="additional-imgs-container h-auto flex flex-col xl:grid xl:grid-cols-2 gap-2 w-full relative mb-16 w-full">
                 {project.project.additional_imgs?.map((img, index) => (
                     <Image 
                         key={index} 
@@ -142,15 +142,26 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             </div>
 
             {/* Live Demo */}
-            {project.project.demo && (
-                <div className="live-demo">
-                    <Image src={project.project.demo} width={300} height={300} alt="Live demo" />
-                </div>
-            )}
+            <div className="live-demo mb-10">
+                <h2 className="text-black text-3xl font-black mb-8">Live demo</h2>
+                {project.project.demo && (
+                    <Image src={project.project.demo} 
+                    width={300} 
+                    height={300} 
+                    alt="Live demo"
+                    style={{
+                        borderRadius: 10,
+                        width: '100%',
+                        height: 700,
+                        objectFit: 'cover'
+                    }}
+                    />
+                )}
+            </div>
 
             {/* Go Up */}
-            <div className="go-up">
-                <Link href="/"><ArrowUpwardIcon /></Link>
+            <div className="go-up w-full flex justify-center align-center py-7">
+                <Link className="p-2 border-1 border-black rounded-4xl w-20 flex justify-center align-center hover:bg-black hover:text-white" href="/"><ArrowUpwardIcon /></Link>
             </div>
         </div>
     );
