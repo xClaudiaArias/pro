@@ -24,7 +24,7 @@ const Sidebar = () => {
         <div className="relative xl:w-64">
             <div className="flex items-center justify-between p-2 bg-white xl:pl-0 xl:mb-2">
                 <div>
-                    <Link href="/" className="block p-2 hover:text-violet-500 rounded text-gray-600">
+                    <Link href="/" className="block p-2 hover:text-violet-500 rounded text-black">
                         <h2 className="lg:text-3xl uppercase p-2 font-bold py-4 lg:px-3 xl:px-6 w-64">
                             Claudia 
                             <br></br>
@@ -52,17 +52,17 @@ const Sidebar = () => {
             <nav className="sm:h-90 bg-white rounded-lg shadow-md p-6 xl:rounded-none xl:shadow-none xl:p-0">
                     <ul className="space-y-4">
                         <li>
-                            <Link href="/about" className="block p-2 hover:text-violet-500 rounded text-gray-600">
+                            <Link href="/about" className="block p-2 hover:text-violet-500 rounded text-black">
                                 ABOUT
                             </Link>
                         </li>
                         <li>
-                            <Link href="/contact" className="block p-2 hover:text-violet-500 rounded text-gray-600">
+                            <Link href="/contact" className="block p-2 hover:text-violet-500 rounded text-black">
                                 CONTACT
                             </Link>
                         </li>
                         <li className="xl:mb-10">
-                            <Link href="/" className="block p-2 hover:text-violet-500 rounded text-gray-600">
+                            <Link href="/" className="block p-2 hover:text-violet-500 rounded text-black">
                                 PROJECTS
                             </Link>
                         </li>
