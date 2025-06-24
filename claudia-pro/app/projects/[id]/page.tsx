@@ -4,6 +4,7 @@ import Image from "next/image";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import { ProjectType } from "@/components/types";
+import { Chip } from "@mui/material";
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -64,7 +65,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 <h2 className="text-black text-3xl font-black mb-8">Tools Used</h2>
                 <ul className="w-200 flex flex-wrap gap-4 mb-20">
                     {project.project.tools?.map((tool, index) => (
-                        <li className="font-light uppercase p-2 border border-solid border-neutral-800 text-neutral-800 rounded-full" key={index}>{tool}</li>
+                        <li key={index}> <Chip label={tool} variant="outlined" /></li>
                     ))}
                 </ul>
             </div>
