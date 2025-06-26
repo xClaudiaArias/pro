@@ -1,0 +1,37 @@
+{
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorStyle": "block",
+    "todohighlight.defaultStyle": {},
+    "todo-tree.highlights.customHighlight": {
+
+        "BUG": {
+            "icon": "bug"
+        },
+        "HACK": {
+            "icon": "tools"
+        },
+        "FIXME": {
+            "icon": "flame"
+        },
+        "XXX": {
+            "icon": "x"
+        },
+        "[ ]": {
+            "icon": "issue-draft"
+        },
+        "[x]": {
+            "icon": "issue-closed"
+        }
+    },
+    "todo-tree.highlights.defaultHighlight": {},
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "NOTE"
+    ]
+}

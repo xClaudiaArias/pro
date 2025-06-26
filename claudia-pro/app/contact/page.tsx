@@ -15,6 +15,7 @@ export default function Page() {
                     Optio obcaecati maxime sequi hic, sunt repudiandae? Eaque, possimus modi architecto, cupiditate impedit id sunt veritatis repellat nisi illo numquam obcaecati excepturi aliquam qui perspiciatis. Dolorum nisi consequuntur ab nobis?</p>
                 </div>
             </div>
+            
 
             <div className="contact-right">
                 <h2 className="text-black text-3xl font-black mb-8">CONTACT ME</h2>
